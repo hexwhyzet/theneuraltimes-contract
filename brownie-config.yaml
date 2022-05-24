@@ -1,0 +1,36 @@
+dotenv: .env
+settings:
+  gas_limit: "auto"
+  gas_price: "auto"
+  persist: true
+  reverting_tx_gas_limit: false
+networks:
+  default: development
+  development:
+    host: http://127.0.0.1
+    gas_price: 0
+    persist: false
+    reverting_tx_gas_limit: 6721975
+    test_rpc:
+      cmd: ganache-cli
+      port: 8545
+      gas_limit: 6721975
+      accounts: 10
+      evm_version: istanbul
+      mnemonic: brownie
+  mainnet:
+    host: https://polygon-mainnet.infura.io/v3/$WEB3_INFURA_PROJECT_ID
+  mumbai:
+    host: https://polygon-mumbai.infura.io/v3/$WEB3_INFURA_PROJECT_ID
+pytest:
+  gas_limit: 6721975
+  default_contract_owner: true
+  reverting_tx_gas_limit: 6721975
+  revert_traceback: true
+compiler:
+  evm_version: null
+  minify_source: false
+  solc:
+    version: null
+    optimize: true
+    runs: 200
